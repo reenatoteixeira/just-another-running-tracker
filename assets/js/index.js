@@ -4,12 +4,15 @@ const RIDE_LIST = document.getElementById('ride-list'),
 ALL_RIDES.forEach(async ([id, value]) => {
   const ITEM_ELEMENT = document.createElement('li'),
     RIDE = JSON.parse(value),
-    FIRST_POS = RIDE.data[0],
-    FIRST_POS_DATA = await getLocationData(FIRST_POS.latitude, FIRST_POS.longitude);
+    FIRST_POS = RIDE.data[0];
 
   RIDE.id = id;
   ITEM_ELEMENT.id = RIDE.id;
   ITEM_ELEMENT.className = 'd-flex p-1 align-items-center gap-3 shadow-sm'
+  RIDE_LIST.appendChild(ITEM_ELEMENT);
+
+  const FIRST_POS_DATA = await getLocationData(FIRST_POS.latitude, FIRST_POS.longitude);
+
   ITEM_ELEMENT.innerHTML = `
   <div style="height: 100px; width: 100px" class="bg-secondary rounded-4">
     map-here
@@ -37,8 +40,6 @@ ALL_RIDES.forEach(async ([id, value]) => {
     </div>
   </div>
   `;
-
-  RIDE_LIST.appendChild(ITEM_ELEMENT);
 })
 
 async function getLocationData(latitude, longitude) {
