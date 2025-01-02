@@ -1,5 +1,14 @@
 const RIDE_LIST = document.getElementById('ride-list'),
+  EMPTY_RIDES = document.getElementById('empty-rides'),
   ALL_RIDES = getAllRides();
+
+console.log('Entrou na home')
+
+EMPTY_RIDES.classList.remove('d-none');
+
+if (localStorage.length > 0) {
+  EMPTY_RIDES.classList.add('d-none');
+}
 
 ALL_RIDES.forEach(async ([id, value]) => {
   const ITEM_ELEMENT = document.createElement('li'),

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -14,14 +14,23 @@
   <title>JART | Home</title>
 </head>
 
-<body>
-  <ul id="ride-list" class="list-group list-group-flush">
-    <!-- Rides here -->
-  </ul>
+<body class="h100">
+  <main class="h-100">
+    <section class="h-100">
+      <div id="empty-rides" class="d-flex flex-column align-items-center justify-content-center vh-100 text-secondary">
+        <i class="bi bi-geo-alt-fill fs-1"></i>
+        <p>No rides to show</p>
+      </div>
 
-  <a href="speedometer/" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 z-3">
-    <i class="bi bi-plus-lg display-1"></i>
-  </a>
+      <ul id="ride-list" class="list-group list-group-flush">
+        <!-- Rides here -->
+      </ul>
+
+      <a href="speedometer/" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 z-3">
+        <i class="bi bi-plus-lg display-1"></i>
+      </a>
+    </section>
+  </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
