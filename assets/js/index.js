@@ -9,25 +9,32 @@ ALL_RIDES.forEach(async ([id, value]) => {
 
   RIDE.id = id;
   ITEM_ELEMENT.id = RIDE.id;
+  ITEM_ELEMENT.className = 'd-flex p-1 align-items-center gap-3 shadow-sm'
   ITEM_ELEMENT.innerHTML = `
-  <div>
-    ${FIRST_POS_DATA.city} - ${FIRST_POS_DATA.countryCode}
+  <div style="height: 100px; width: 100px" class="bg-secondary rounded-4">
+    map-here
   </div>
   
-  <div>
-    Max speed: ${getMaxSpeed(RIDE.data)}Km/h
-  </div>
-  
-  <div>
-    Distance: ${getDistance(RIDE.data)}Km
-  </div>
-  
-  <div>
-    Duration: ${getDuration(RIDE)}
-  </div>
-  
-  <div>
-    ${getStartDate(RIDE)}
+  <div class="flex-fill d-flex flex-column">
+    <div class="text-primary mb-2">
+      ${FIRST_POS_DATA.city} - ${FIRST_POS_DATA.countryCode}
+    </div>
+    
+    <div class="h5">
+      Distance: ${getDistance(RIDE.data)}Km
+    </div>
+    
+    <div>
+      Duration: ${getDuration(RIDE)}
+    </div>
+    
+    <div>
+      Max speed: ${getMaxSpeed(RIDE.data)}Km/h
+    </div>
+    
+    <div class="text-secondary mt-2">
+      ${getStartDate(RIDE)}
+    </div>
   </div>
   `;
 
