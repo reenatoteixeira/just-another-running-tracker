@@ -21,6 +21,14 @@ ALL_RIDES.forEach(async ([id, value]) => {
   <div>
     Distance: ${getDistance(RIDE.data)}Km
   </div>
+  
+  <div>
+    Duration: ${getDuration(RIDE)}
+  </div>
+  
+  <div>
+    ${getStartDate(RIDE)}
+  </div>
   `;
 
   RIDE_LIST.appendChild(ITEM_ELEMENT);
@@ -78,6 +86,30 @@ function getDistance(positions) {
   return totalDistance.toFixed(1);
 }
 
+function getDuration(ride) {
+  const INTERVAL = (ride.stopTime - ride.startTime) / 1000,
+    MINUTES = INTERVAL / 60,
+    SECONDS = INTERVAL % 60;
+
+
+  return `${formatNumber(MINUTES, 2)}m${formatNumber(SECONDS, 2)}s`;
+}
+
+function getStartDate(ride) {
+  const DATE = new Date(ride.startTime),
+    DAY = DATE.toLocaleString("en-US", {day: 'numeric'}),
+    MONTH = DATE.toLocaleString("en-US", {month: 'long'}),
+    YEAR = DATE.toLocaleString("en-US", {year: 'numeric'}),
+    HOUR = DATE.toLocaleString("en-US", {hour: '2-digit', hour12: false}),
+    MINUTE = DATE.toLocaleString("en-US", {minute: '2-digit'});
+
+  return `${HOUR}:${MINUTE} - ${MONTH}, ${DAY}, ${YEAR}`;
+}
+
 function toRad(degrees) {
   return degrees * Math.PI / 180
+}
+
+function formatNumber(number, digits) {
+  return String(number.toFixed(0)).padStart(2, '0');
 }
