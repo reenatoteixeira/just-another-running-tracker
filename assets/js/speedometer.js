@@ -40,4 +40,6 @@ STOP_BTN.addEventListener('click', () => {
 
   STOP_BTN.classList.add('d-none');
   START_BTN.classList.remove('d-none');
+
+  window.location.href = '../';
 });
