@@ -9,7 +9,12 @@ ALL_RIDES.forEach(async ([id, value]) => {
   RIDE.id = id;
   ITEM_ELEMENT.id = RIDE.id;
   ITEM_ELEMENT.className = 'd-flex p-1 align-items-center gap-3 shadow-sm'
+  ITEM_ELEMENT.style.cursor = 'pointer';
   RIDE_LIST.appendChild(ITEM_ELEMENT);
+
+  ITEM_ELEMENT.addEventListener("click", () => {
+    window.location.href = `./detail/?id=${RIDE.id}`;
+  })
 
   const FIRST_POS_DATA = await getLocationData(FIRST_POS.latitude, FIRST_POS.longitude);
 

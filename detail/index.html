@@ -1,16 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/global.css">
   <title>JART | Activities</title>
 </head>
 
-<body>
-  <h1>Just Another Running Tracker</h1>
-  <p>Activities</p>
-  <p>Coming soon!</p>
+<body class="h-100 d-flex flex-column">
+  <header class="container">
+    <nav class="navbar justify-content-end">
+      <a href="../" class="btn btn-close border border-dark p-2"></a>
+    </nav>
+  </header>
+
+  <main class="container flex-fill">
+    <section class="d-flex flex-column justify-content-between h-100">
+      <div id="ride-details">
+        <!--  Ride details here  -->
+      </div>
+
+      <div>
+        <button class="btn btn-danger w-100 mb-3">
+          <span class="display-4">Delete</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-secondary">
+    <p>Developed by Renato Teixeira</p>
+    <p>See more on github.com</p>
+  </footer>
+
+  <script src="../assets/js/storage.js"></script>
+  <script src="../assets/js/functions.js"></script>
+  <script src="../assets/js/detail.js"></script>
 </body>
 </html>
