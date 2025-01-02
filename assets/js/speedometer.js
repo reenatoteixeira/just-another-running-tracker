@@ -9,7 +9,7 @@ START_BTN.addEventListener('click', () => {
   if (watchId) return
 
   function handleSuccess(position) {
-    console.log(position);
+    addPosition(currentRide, position);
     SPEED_ELEMENT.innerHTML = position.coords.speed ?
       (position.coords.speed * 3.6).toFixed(1) : 0;
   }
