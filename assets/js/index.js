@@ -19,8 +19,6 @@ ALL_RIDES.forEach(async ([id, value]) => {
   const FIRST_POS_DATA = await getLocationData(FIRST_POS.latitude, FIRST_POS.longitude),
     RIDE_MAP_ID = `map${RIDE.id}`;
 
-  console.log(RIDE_MAP_ID)
-
   ITEM_ELEMENT.innerHTML = `
   <div id="${RIDE_MAP_ID}" class="ride-map bg-secondary rounded-4"></div>
   
