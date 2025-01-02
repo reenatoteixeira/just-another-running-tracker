@@ -75,10 +75,9 @@ function getDistance(positions) {
     totalDistance += DISTANCE;
   }
 
-  function toRad(degrees) {
-    return degrees * Math.PI / 180
-  }
-
   return totalDistance.toFixed(1);
 }
 
+function toRad(degrees) {
+  return degrees * Math.PI / 180
+}
