@@ -7,15 +7,3 @@
 div > span {
   font-size: 32px;
 }
-
-footer {
-  height: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-footer > p {
-  margin-bottom: 0;
-}
