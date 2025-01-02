@@ -7,3 +7,7 @@
 div > span {
   font-size: 32px;
 }
+
+#ride-map {
+  height: 300px;
+}
