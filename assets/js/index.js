@@ -16,12 +16,13 @@ ALL_RIDES.forEach(async ([id, value]) => {
     window.location.href = `./detail/?id=${RIDE.id}`;
   })
 
-  const FIRST_POS_DATA = await getLocationData(FIRST_POS.latitude, FIRST_POS.longitude);
+  const FIRST_POS_DATA = await getLocationData(FIRST_POS.latitude, FIRST_POS.longitude),
+    RIDE_MAP_ID = `map${RIDE.id}`;
+
+  console.log(RIDE_MAP_ID)
 
   ITEM_ELEMENT.innerHTML = `
-  <div style="height: 100px; width: 100px" class="bg-secondary rounded-4">
-    map-here
-  </div>
+  <div id="${RIDE_MAP_ID}" class="ride-map bg-secondary rounded-4"></div>
   
   <div class="flex-fill d-flex flex-column">
     <div class="text-primary mb-2">
@@ -45,4 +46,14 @@ ALL_RIDES.forEach(async ([id, value]) => {
     </div>
   </div>
   `;
+
+  const RIDE_MAP = L.map(RIDE_MAP_ID, {
+    zoomControl: false,
+    scrollWheelZoom: false,
+    dragging: false,
+    attributionControl: false
+  }).setView([FIRST_POS.latitude, FIRST_POS.longitude], 15);
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(RIDE_MAP);
+  L.marker([FIRST_POS.latitude, FIRST_POS.longitude]).addTo(RIDE_MAP);
 })
