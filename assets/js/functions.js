@@ -70,6 +70,10 @@ function getStartDate(ride) {
   return `${HOUR}:${MINUTE} - ${MONTH}, ${DAY}, ${YEAR}`;
 }
 
+function deleteRide(rideID) {
+  localStorage.removeItem(rideID);
+}
+
 function toRad(degrees) {
   return degrees * Math.PI / 180
 }
