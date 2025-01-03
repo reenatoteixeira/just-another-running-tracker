@@ -1,6 +1,6 @@
 # Just Another Running Tracker
 
-[Just Another Running Tracker](https://reenatoteixeira.github.io/just-another-running-tracker/) is a web application designed to help users track their running activities (or any distance/speed based stuff).
+[Just Another Running Tracker](https://reenatoteixeira.github.io/just-another-running-tracker/) is a mobile web application designed to help users track their running activities (or any distance/speed based stuff).
 
 ## Features
 
